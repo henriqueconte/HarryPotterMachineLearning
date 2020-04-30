@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraOverlayView" customModule="HarryPotterMachineLearning" customModuleProvider="target">
+            <connections>
+                <outlet property="changeCamerButton" destination="Tdy-5b-haJ" id="G4I-ak-hIV"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ueJ-cM-12O"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desenho-da-face-da-mulher_23-2147507412" translatesAutoresizingMaskIntoConstraints="NO" id="ae6-8b-FNN">
+                    <rect key="frame" x="0.0" y="44" width="414" height="493"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdy-5b-haJ">
+                    <rect key="frame" x="304" y="715" width="41" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <state key="normal" title="Flip"/>
+                    <connections>
+                        <action selector="changeCamera:" destination="-1" eventType="touchUpInside" id="w8b-7T-nqw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyL-0O-6yM">
+                    <rect key="frame" x="132" y="662.5" width="150" height="149"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="e3K-bc-8JG"/>
+                        <constraint firstAttribute="height" constant="150" id="xng-H0-qcY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="circle.fill" catalog="system"/>
+                    <connections>
+                        <action selector="takePicture:" destination="-1" eventType="touchUpInside" id="Y2B-i1-vC0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="TyL-0O-6yM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HKR-dk-uJ3"/>
+                <constraint firstItem="Tdy-5b-haJ" firstAttribute="centerY" secondItem="TyL-0O-6yM" secondAttribute="centerY" id="Rr5-bQ-PQb"/>
+                <constraint firstItem="ae6-8b-FNN" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.55" id="Vgf-dI-U0N"/>
+                <constraint firstItem="ae6-8b-FNN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="aiN-Cv-haf"/>
+                <constraint firstItem="ae6-8b-FNN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bYN-iQ-32X"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TyL-0O-6yM" secondAttribute="bottom" constant="50" id="f2o-eD-tGw"/>
+                <constraint firstItem="ae6-8b-FNN" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mfK-x7-vyg"/>
+                <constraint firstItem="Tdy-5b-haJ" firstAttribute="leading" secondItem="TyL-0O-6yM" secondAttribute="trailing" constant="22" id="pU2-Hf-wEP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="desenho-da-face-da-mulher_23-2147507412" width="185.5" height="279.5"/>
+    </resources>
+</document>
