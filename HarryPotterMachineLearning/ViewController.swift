@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let shareWithFriends = ShareWithFriends()
+    
 
     @IBOutlet weak var class3ValuePredict: UILabel!
     @IBOutlet weak var class2ValuePredict: UILabel!
@@ -24,7 +26,13 @@ class ViewController: UIViewController {
         imageController = ImageController(presentationController: self, delegate: self, useFaceOverlay: true)
         // Do any additional setup after loading the view.
     }
+    
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        //shareWithFriends.share(currentViewController: self, text: "I got 74% Hermione Granger! Check who you look like here!")
+    }
     @IBAction func getImage(_ sender: UIButton) {
         imageController.present()
         class1Label.isHidden = true
