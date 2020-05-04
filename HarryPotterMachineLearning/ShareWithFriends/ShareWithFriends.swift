@@ -10,24 +10,17 @@ import Foundation
 import UIKit
 
 
-class ShareWithFriends: UIViewController {
+class ShareWithFriends {
     
-    @IBOutlet weak var shareButton: UIButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    @IBAction func share(_ sender: Any) {
-        let sharingText = "I got 71% Hermione Granger! Check who you look like here!"
+    func share(currentViewController: UIViewController, text: String) {
+        let sharingText = text
         let sharingURL = URL(string: "https://apps.apple.com/br/app/spinning-shapes/id1475284364?l=en") ?? URL(fileURLWithPath: "")
-        //let imageExample = Bundle.main.url(forResource: "image", withExtension: "jpg") //URL(fileURLWithPath: "Martinique")//UIImage(named: "Martinique")!
         
         let activityController = UIActivityViewController(activityItems: [sharingText, sharingURL], applicationActivities: nil)
         
-        activityController.popoverPresentationController?.sourceView = self.view
+        activityController.popoverPresentationController?.sourceView = currentViewController.view
         
-        self.present(activityController, animated: true, completion: nil)
+        currentViewController.present(activityController, animated: true, completion: nil)
     }
 
 }

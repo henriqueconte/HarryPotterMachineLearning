@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let shareWithFriends = ShareWithFriends()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        //shareWithFriends.share(currentViewController: self, text: "I got 74% Hermione Granger! Check who you look like here!")
+    }
 
 }
 
