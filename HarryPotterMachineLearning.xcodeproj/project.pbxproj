@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D03C1D12460A58D005EC881 /* Extension_UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03C1D02460A58D005EC881 /* Extension_UIImageView.swift */; };
 		2D40787C245B464F0050676A /* ImageControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40787B245B464F0050676A /* ImageControllerDelegate.swift */; };
 		2D40787E245B4D9D0050676A /* CameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D40787D245B4D9D0050676A /* CameraOverlayView.xib */; };
 		2D407880245B54A20050676A /* CameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40787F245B54A20050676A /* CameraOverlayView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D03C1D02460A58D005EC881 /* Extension_UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIImageView.swift; sourceTree = "<group>"; };
 		2D40787B245B464F0050676A /* ImageControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageControllerDelegate.swift; sourceTree = "<group>"; };
 		2D40787D245B4D9D0050676A /* CameraOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraOverlayView.xib; sourceTree = "<group>"; };
 		2D40787F245B54A20050676A /* CameraOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraOverlayView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D03C1CF2460A57B005EC881 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2D03C1D02460A58D005EC881 /* Extension_UIImageView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		2D407885245B5E240050676A /* ImageController */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 		80BB97992459EE83003F4C17 /* HarryPotterMachineLearning */ = {
 			isa = PBXGroup;
 			children = (
+				2D03C1CF2460A57B005EC881 /* Extension */,
 				80E8B4FE245B49EA00556C50 /* ShareWithFriends */,
 				2D407885245B5E240050676A /* ImageController */,
 				2D4F8275245B446800FB3960 /* MLController */,
@@ -192,6 +203,7 @@
 				2D407882245B5BA00050676A /* MLController.swift in Sources */,
 				80BB979B2459EE83003F4C17 /* AppDelegate.swift in Sources */,
 				2D407880245B54A20050676A /* CameraOverlayView.swift in Sources */,
+				2D03C1D12460A58D005EC881 /* Extension_UIImageView.swift in Sources */,
 				80BB979D2459EE83003F4C17 /* SceneDelegate.swift in Sources */,
 				80E8B502245B4ADC00556C50 /* ShareWithFriends.swift in Sources */,
 				2D40787C245B464F0050676A /* ImageControllerDelegate.swift in Sources */,
@@ -341,7 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4NP5AK64M5;
+				DEVELOPMENT_TEAM = DZPZD745C7;
 				INFOPLIST_FILE = HarryPotterMachineLearning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -359,7 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4NP5AK64M5;
+				DEVELOPMENT_TEAM = DZPZD745C7;
 				INFOPLIST_FILE = HarryPotterMachineLearning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
