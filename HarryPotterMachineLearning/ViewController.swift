@@ -69,6 +69,29 @@ class ViewController: UIViewController {
         }
     }
     
+    func personFound(image: UIImage) -> Bool {
+        let predicts = self.mlController.predictPerson(image: image).filter { $0.valuePredict >= 0.01
+        }
+        
+        if predicts.count > 0 {
+            if predicts[0].name == "People" {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            return false
+        }
+    }
+    
+    func displayAlert() {
+        let alert = UIAlertController(title: "Are you a real wizard?", message: "It looks like no wizard face was found... Are you an infiltrated muggle?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
 }
 
 extension ViewController: ImageControllerDelegate {
@@ -76,18 +99,13 @@ extension ViewController: ImageControllerDelegate {
         DispatchQueue.main.async {
             self.imageView.image = image
             
-            let predicts = self.mlController.predictPerson(image: image).filter { $0.valuePredict >= 0.01
+            if self.personFound(image: image ?? UIImage()) {
+                self.detectHPCharacter(image: image ?? UIImage())
             }
-            
-            if predicts.count > 0 {
-                if predicts[0].name == "People" {
-                    self.detectHPCharacter(image: image ?? UIImage())
-                }
-                else if predicts[0].name == "Things" {
-                    self.class1Label.text = "Not found"
-                    self.class1Label.isHidden = false
-                }
+            else {
+                self.displayAlert()
             }
+
         }
     }
     
