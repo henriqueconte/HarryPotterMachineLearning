@@ -10,8 +10,9 @@ import UIKit
 
 class CameraOverlayView: UIView {
 
+    @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var changeCamerButton: UIButton!
-    @IBOutlet weak var takePhotoImage: UIImageView!
+    @IBOutlet weak var takePhotoArea: UIView!
     @IBOutlet var view: UIView!
     
     var imagePickerController: UIImagePickerController!
@@ -35,12 +36,28 @@ class CameraOverlayView: UIView {
     func configure(imagePickerController: UIImagePickerController) {
         self.imagePickerController = imagePickerController
         self.imagePickerController.cameraDevice = .front
-        
+        self.imagePickerController.cameraFlashMode = .off
     }
     
+    @IBAction func getImage(_ sender: Any) {
+    }
+    @IBAction func changeFlash(_ sender: UIButton) {
+        if imagePickerController.cameraFlashMode == .off {
+            flashButton.setBackgroundImage(UIImage(systemName: "bolt.fill"), for: .normal)
+                
+            imagePickerController.cameraFlashMode = .on
+        } else {
+            flashButton.setBackgroundImage(UIImage(systemName: "bolt.slash.fill"), for: .normal)
+            imagePickerController.cameraFlashMode = .off
+        }
+    }
     
     @IBAction func takePicture(_ sender: UIButton) {
+
         self.imagePickerController.takePicture()
+    }
+    @IBAction func exit(_ sender: Any) {
+        self.imagePickerController.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func changeCamera(_ sender: UIButton) {
