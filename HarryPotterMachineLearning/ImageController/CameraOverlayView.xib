@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraOverlayView" customModule="HarryPotterMachineLearning" customModuleProvider="target">
             <connections>
                 <outlet property="changeCamerButton" destination="Tdy-5b-haJ" id="G4I-ak-hIV"/>
+                <outlet property="takePhotoImage" destination="hZw-Qr-VSA" id="8Q1-3n-e8n"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ueJ-cM-12O"/>
             </connections>
         </placeholder>
@@ -18,48 +19,97 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desenho-da-face-da-mulher_23-2147507412" translatesAutoresizingMaskIntoConstraints="NO" id="ae6-8b-FNN">
-                    <rect key="frame" x="0.0" y="44" width="414" height="493"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdy-5b-haJ">
-                    <rect key="frame" x="304" y="715" width="41" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6S-0M-1Aa">
+                    <rect key="frame" x="20" y="66.666666666666657" width="27" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="27" id="GYE-9y-g8l"/>
+                        <constraint firstAttribute="height" constant="27" id="Xde-gb-vrY"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="xmark" catalog="system"/>
+                </button>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdy-5b-haJ">
+                    <rect key="frame" x="303" y="745.66666666666663" width="36" height="28.666666666666629"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="7XV-9f-k6G"/>
+                        <constraint firstAttribute="height" constant="31" id="Ro2-IS-Yd8"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                    <state key="normal" title="Flip"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="camera.rotate" catalog="system"/>
                     <connections>
                         <action selector="changeCamera:" destination="-1" eventType="touchUpInside" id="w8b-7T-nqw"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyL-0O-6yM">
-                    <rect key="frame" x="132" y="662.5" width="150" height="149"/>
+                    <rect key="frame" x="155" y="709" width="104" height="102.66666666666663"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="e3K-bc-8JG"/>
-                        <constraint firstAttribute="height" constant="150" id="xng-H0-qcY"/>
+                        <constraint firstAttribute="width" constant="104" id="e3K-bc-8JG"/>
+                        <constraint firstAttribute="height" constant="104" id="xng-H0-qcY"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" backgroundImage="circle.fill" catalog="system"/>
+                    <state key="normal" backgroundImage="camera.circle.fill" catalog="system"/>
                     <connections>
                         <action selector="takePicture:" destination="-1" eventType="touchUpInside" id="Y2B-i1-vC0"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNV-aw-R4X">
+                    <rect key="frame" x="75" y="746.33333333333326" width="36" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="Zrf-zM-yny"/>
+                        <constraint firstAttribute="width" constant="36" id="vRx-en-3QO"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="photo" catalog="system"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYY-pS-e6a">
+                    <rect key="frame" x="365" y="102.66666666666667" width="18" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="IWO-Lu-4zB"/>
+                        <constraint firstAttribute="width" constant="18" id="nYi-hP-k5q"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="bolt.slash.fill" catalog="system"/>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 2" translatesAutoresizingMaskIntoConstraints="NO" id="hZw-Qr-VSA">
+                    <rect key="frame" x="84" y="275.66666666666669" width="246" height="345.00000000000006"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="246" id="Nlh-pL-Kkw"/>
+                        <constraint firstAttribute="height" constant="345" id="bGG-ED-0fb"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.59608256820000005" green="0.59607106450000003" blue="0.59607887270000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="v6S-0M-1Aa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Dcl-oG-KuR"/>
                 <constraint firstItem="TyL-0O-6yM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HKR-dk-uJ3"/>
+                <constraint firstItem="sNV-aw-R4X" firstAttribute="centerY" secondItem="TyL-0O-6yM" secondAttribute="centerY" id="Nc9-Re-W6Z"/>
+                <constraint firstItem="hZw-Qr-VSA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ocs-gt-HS4"/>
+                <constraint firstItem="TyL-0O-6yM" firstAttribute="leading" secondItem="sNV-aw-R4X" secondAttribute="trailing" constant="44" id="RfG-2C-alT"/>
                 <constraint firstItem="Tdy-5b-haJ" firstAttribute="centerY" secondItem="TyL-0O-6yM" secondAttribute="centerY" id="Rr5-bQ-PQb"/>
-                <constraint firstItem="ae6-8b-FNN" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.55" id="Vgf-dI-U0N"/>
-                <constraint firstItem="ae6-8b-FNN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="aiN-Cv-haf"/>
-                <constraint firstItem="ae6-8b-FNN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bYN-iQ-32X"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TyL-0O-6yM" secondAttribute="bottom" constant="50" id="f2o-eD-tGw"/>
-                <constraint firstItem="ae6-8b-FNN" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mfK-x7-vyg"/>
-                <constraint firstItem="Tdy-5b-haJ" firstAttribute="leading" secondItem="TyL-0O-6yM" secondAttribute="trailing" constant="22" id="pU2-Hf-wEP"/>
+                <constraint firstItem="v6S-0M-1Aa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fws-Nm-ig6"/>
+                <constraint firstItem="Tdy-5b-haJ" firstAttribute="leading" secondItem="TyL-0O-6yM" secondAttribute="trailing" constant="44" id="pU2-Hf-wEP"/>
+                <constraint firstItem="SYY-pS-e6a" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="59" id="qE4-7v-764"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SYY-pS-e6a" secondAttribute="trailing" constant="31" id="qlU-xA-lGV"/>
+                <constraint firstItem="hZw-Qr-VSA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="t6V-jN-nB9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </view>
+        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ilz-PX-34D">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="99" y="506"/>
+        </imageView>
     </objects>
     <resources>
-        <image name="circle.fill" catalog="system" width="128" height="121"/>
-        <image name="desenho-da-face-da-mulher_23-2147507412" width="185.5" height="279.5"/>
+        <image name="Ellipse 2" width="82" height="115"/>
+        <image name="bolt.slash.fill" catalog="system" width="101" height="128"/>
+        <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="camera.rotate" catalog="system" width="128" height="96"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>
