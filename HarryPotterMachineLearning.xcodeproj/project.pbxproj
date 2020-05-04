@@ -14,6 +14,7 @@
 		2D407884245B5DC40050676A /* MLClassPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D407883245B5DC40050676A /* MLClassPrediction.swift */; };
 		2D4F8277245B448000FB3960 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F8276245B448000FB3960 /* ImageController.swift */; };
 		2D4F8279245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F8278245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel */; };
+		809B422624609A0E00591479 /* PersonDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 809B422524609A0E00591479 /* PersonDetector.mlmodel */; };
 		80BB979B2459EE83003F4C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB979A2459EE83003F4C17 /* AppDelegate.swift */; };
 		80BB979D2459EE83003F4C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB979C2459EE83003F4C17 /* SceneDelegate.swift */; };
 		80BB979F2459EE83003F4C17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB979E2459EE83003F4C17 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		2D407883245B5DC40050676A /* MLClassPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLClassPrediction.swift; sourceTree = "<group>"; };
 		2D4F8276245B448000FB3960 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		2D4F8278245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HarryPotterCharacterDetector.mlmodel; sourceTree = "<group>"; };
+		809B422524609A0E00591479 /* PersonDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PersonDetector.mlmodel; sourceTree = "<group>"; };
 		80BB97972459EE83003F4C17 /* HarryPotterMachineLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotterMachineLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BB979A2459EE83003F4C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80BB979C2459EE83003F4C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		2D4F8275245B446800FB3960 /* MLController */ = {
 			isa = PBXGroup;
 			children = (
+				809B422524609A0E00591479 /* PersonDetector.mlmodel */,
 				2D4F8278245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel */,
 				2D407881245B5BA00050676A /* MLController.swift */,
 				2D407883245B5DC40050676A /* MLClassPrediction.swift */,
@@ -194,6 +197,7 @@
 				2D407880245B54A20050676A /* CameraOverlayView.swift in Sources */,
 				80BB979D2459EE83003F4C17 /* SceneDelegate.swift in Sources */,
 				80E8B502245B4ADC00556C50 /* ShareWithFriends.swift in Sources */,
+				809B422624609A0E00591479 /* PersonDetector.mlmodel in Sources */,
 				2D40787C245B464F0050676A /* ImageControllerDelegate.swift in Sources */,
 				2D4F8277245B448000FB3960 /* ImageController.swift in Sources */,
 				2D407884245B5DC40050676A /* MLClassPrediction.swift in Sources */,
