@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     let shareWithFriends = ShareWithFriends()
     let mlController = MLController()
+    var userImage: UIImage?
+    var characterImage: UIImage?
+    
 
     @IBOutlet weak var class3ValuePredict: UILabel!
     @IBOutlet weak var class2ValuePredict: UILabel!
@@ -21,10 +24,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var class1Label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     var imageController: ImageController!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageController = ImageController(presentationController: self, delegate: self, useFaceOverlay: true)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(transformImage(_:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func transformImage(_ gesture: UIGestureRecognizer) {
+        guard let userImage = userImage, let charImage = characterImage else {
+            return
+        }
+        if imageView.image == userImage {
+            imageView.transformImage(to: charImage, duration: 2.0)
+        } else {
+            imageView.transformImage(to: userImage, duration: 1.0)
+        }
     }
     
 
@@ -33,7 +52,10 @@ class ViewController: UIViewController {
         
         //shareWithFriends.share(currentViewController: self, text: "I got 74% Hermione Granger! Check who you look like here!")
     }
+    
     @IBAction func getImage(_ sender: UIButton) {
+        userImage = nil
+        characterImage = nil
         imageController.present()
         class1Label.isHidden = true
         class2Label.isHidden = true
@@ -49,6 +71,7 @@ class ViewController: UIViewController {
         for i in 0 ..< (predicts.count < 3 ? predicts.count : 3) {
             switch i {
             case 0:
+                self.setCharImage(character: predicts[i].name)
                 self.class1Label.text = predicts[i].name
                 self.class1Label.isHidden = false
                 self.class1ValuePredict.text = Int(predicts[i].valuePredict * 100).description
@@ -67,6 +90,9 @@ class ViewController: UIViewController {
                 break
             }
         }
+
+        // transform user image in char image animation
+        self.magicUserToCharAnimation()
     }
     
     func personFound(image: UIImage) -> Bool {
@@ -92,12 +118,32 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func magicUserToCharAnimation() {
+        self.imageView.image = userImage
+        var time = 0
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            if time > 0 {
+                self.imageView.transformImage(to: self.characterImage, duration: 4.0)
+                timer.invalidate()
+
+            } else {
+                time += 1
+            }
+        }.fire()
+    }
+    
+    func setCharImage(character: String) {
+        self.characterImage = UIImage(named: character)
+    }
+    
+    
 }
 
 extension ViewController: ImageControllerDelegate {
     func didSelect(image: UIImage?) {
         DispatchQueue.main.async {
-            self.imageView.image = image
+            //self.imageView.image = image
+            self.userImage = image
             
             if self.personFound(image: image ?? UIImage()) {
                 self.detectHPCharacter(image: image ?? UIImage())
