@@ -10,53 +10,30 @@ import Foundation
 import UIKit
 
 class ImageController: NSObject {
-    private let pickerController: UIImagePickerController
-    private weak var presentationController: UIViewController?
+    let pickerController: UIImagePickerController
+    weak var presentationController: UIViewController?
     private weak var delegate: ImageControllerDelegate?
     
     var useOverlay = false
 
     public init(presentationController: UIViewController, delegate: ImageControllerDelegate, useFaceOverlay: Bool) {
         self.pickerController = UIImagePickerController()
-
         super.init()
-
         self.presentationController = presentationController
         self.delegate = delegate
-
         self.pickerController.delegate = self
         self.pickerController.allowsEditing = true
         self.pickerController.mediaTypes = ["public.image"]
-        
         self.useOverlay = useFaceOverlay
     }
    
-    private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
-        guard UIImagePickerController.isSourceTypeAvailable(type) else {
-            return nil
-        }
-
-        return UIAlertAction(title: title, style: .default) { [unowned self] _ in
-            self.pickerController.sourceType = type
-            self.presentationController?.present(self.pickerController, animated: true)
-            if self.pickerController.sourceType == .camera {
-                if self.useOverlay {
-                    let overlayView = CameraOverlayView()
-                    overlayView.configure(imagePickerController: self.pickerController)
-                    self.pickerController.showsCameraControls = false
-                    overlayView.frame = (self.pickerController.cameraOverlayView?.frame)!
-                    self.pickerController.cameraOverlayView = overlayView
-                }
-            }
-        }
-    }
-    
     public func showCamera(){
         self.pickerController.sourceType = .camera
         self.presentationController?.present(self.pickerController, animated: true)
         if self.pickerController.sourceType == .camera {
             if self.useOverlay {
-                let overlayView = CameraOverlayView()
+                guard let controller = presentationController else { return }
+                let overlayView = CameraOverlayView(frame: controller.view.frame , imageController: self)
                 overlayView.configure(imagePickerController: self.pickerController)
                 self.pickerController.showsCameraControls = false
                 overlayView.frame = (self.pickerController.cameraOverlayView?.frame)!
@@ -65,28 +42,8 @@ class ImageController: NSObject {
         }
     }
         
-    public func present() {
-
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-        if let action = self.action(for: .camera, title: "Take photo") {
-            alertController.addAction(action)
-        }
-        if let action = self.action(for: .savedPhotosAlbum, title: "Camera roll") {
-            alertController.addAction(action)
-        }
-        if let action = self.action(for: .photoLibrary, title: "Photo library") {
-            alertController.addAction(action)
-        }
-
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        self.presentationController?.present(alertController, animated: true)
-    }
-
     private func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {
         controller.dismiss(animated: true, completion: nil)
-
         self.delegate?.didSelect(image: image)
     }
 }

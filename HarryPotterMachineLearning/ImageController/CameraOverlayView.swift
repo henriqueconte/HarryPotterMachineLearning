@@ -9,7 +9,7 @@
 import UIKit
 
 class CameraOverlayView: UIView {
-
+    var imageController : ImageController?
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var changeCamerButton: UIButton!
     @IBOutlet weak var takePhotoArea: UIView!
@@ -17,8 +17,9 @@ class CameraOverlayView: UIView {
     
     var imagePickerController: UIImagePickerController!
     
-    override init(frame: CGRect) {
+    init(frame: CGRect,imageController: ImageController) {
         super.init(frame: frame)
+        self.imageController = imageController
         commonInit()
     }
     
@@ -40,7 +41,11 @@ class CameraOverlayView: UIView {
     }
     
     @IBAction func getImage(_ sender: Any) {
+        guard let controller = imageController else { return }
+        controller.pickerController.sourceType = .savedPhotosAlbum
+        controller.presentationController?.show(controller.pickerController, sender:nil)
     }
+    
     @IBAction func changeFlash(_ sender: UIButton) {
         if imagePickerController.cameraFlashMode == .off {
             flashButton.setBackgroundImage(UIImage(systemName: "bolt.fill"), for: .normal)
