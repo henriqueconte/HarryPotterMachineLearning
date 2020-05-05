@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let shareWithFriends = ShareWithFriends()
+    let mlController = MLController()
     var userImage: UIImage?
     var characterImage: UIImage?
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var class1Label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     var imageController: ImageController!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageController = ImageController(presentationController: self, delegate: self, useFaceOverlay: true)
@@ -49,6 +52,7 @@ class ViewController: UIViewController {
         
         //shareWithFriends.share(currentViewController: self, text: "I got 74% Hermione Granger! Check who you look like here!")
     }
+    
     @IBAction func getImage(_ sender: UIButton) {
         imageController.showCamera()
         userImage = nil
@@ -59,6 +63,59 @@ class ViewController: UIViewController {
         class1ValuePredict.isHidden = true
         class2ValuePredict.isHidden = true
         class3ValuePredict.isHidden = true
+    }
+    
+    func detectHPCharacter(image: UIImage) {
+        let predicts = mlController.predictHPCharacter(image: image).filter { $0.valuePredict >= 0.01
+        }
+        for i in 0 ..< (predicts.count < 3 ? predicts.count : 3) {
+            switch i {
+            case 0:
+                self.setCharImage(character: predicts[i].name)
+                self.class1Label.text = predicts[i].name
+                self.class1Label.isHidden = false
+                self.class1ValuePredict.text = Int(predicts[i].valuePredict * 100).description
+                self.class1ValuePredict.isHidden = false
+            case 1:
+                self.class2Label.text = predicts[i].name
+                self.class2Label.isHidden = false
+                self.class2ValuePredict.text = Int(predicts[i].valuePredict * 100).description
+                self.class2ValuePredict.isHidden = false
+            case 3:
+                self.class3Label.text = predicts[i].name
+                self.class3Label.isHidden = false
+                self.class3ValuePredict.text = Int(predicts[i].valuePredict * 100).description
+                self.class3ValuePredict.isHidden = false
+            default:
+                break
+            }
+        }
+
+        // transform user image in char image animation
+        self.magicUserToCharAnimation()
+    }
+    
+    func personFound(image: UIImage) -> Bool {
+        let predicts = self.mlController.predictPerson(image: image).filter { $0.valuePredict >= 0.01
+        }
+        
+        if predicts.count > 0 {
+            if predicts[0].name == "People" {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            return false
+        }
+    }
+    
+    func displayAlert() {
+        let alert = UIAlertController(title: "Are you a real wizard?", message: "It looks like no wizard face was found... Are you an infiltrated muggle?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true)
     }
     
     func magicUserToCharAnimation() {
@@ -85,35 +142,16 @@ class ViewController: UIViewController {
 extension ViewController: ImageControllerDelegate {
     func didSelect(image: UIImage?) {
         DispatchQueue.main.async {
+            //self.imageView.image = image
             self.userImage = image
-            let mlController = MLController()
-            let predicts = mlController.predict(image: image).filter { $0.valuePredict >= 0.01
+            
+            if self.personFound(image: image ?? UIImage()) {
+                self.detectHPCharacter(image: image ?? UIImage())
             }
-            for i in 0 ..< (predicts.count < 3 ? predicts.count : 3) {
-                switch i {
-                case 0:
-                    //set first predict as char image
-                    self.setCharImage(character: predicts[i].name)
-                    self.class1Label.text = predicts[i].name
-                    self.class1Label.isHidden = false
-                    self.class1ValuePredict.text = Int(predicts[i].valuePredict * 100).description
-                    self.class1ValuePredict.isHidden = false
-                case 1:
-                    self.class2Label.text = predicts[i].name
-                    self.class2Label.isHidden = false
-                    self.class2ValuePredict.text = Int(predicts[i].valuePredict * 100).description
-                    self.class2ValuePredict.isHidden = false
-                case 3:
-                    self.class3Label.text = predicts[i].name
-                    self.class3Label.isHidden = false
-                    self.class3ValuePredict.text = Int(predicts[i].valuePredict * 100).description
-                    self.class3ValuePredict.isHidden = false
-                default:
-                    break
-                }
+            else {
+                self.displayAlert()
             }
-            // transform user image in char image animation
-            self.magicUserToCharAnimation()
+
         }
     }
     
