@@ -54,9 +54,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func getImage(_ sender: UIButton) {
+        imageController.showCamera()
         userImage = nil
         characterImage = nil
-        imageController.present()
         class1Label.isHidden = true
         class2Label.isHidden = true
         class3Label.isHidden = true

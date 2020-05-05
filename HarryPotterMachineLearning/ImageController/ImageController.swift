@@ -30,7 +30,7 @@ class ImageController: NSObject {
         
         self.useOverlay = useFaceOverlay
     }
-
+   
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
         guard UIImagePickerController.isSourceTypeAvailable(type) else {
             return nil
@@ -50,7 +50,21 @@ class ImageController: NSObject {
             }
         }
     }
-
+    
+    public func showCamera(){
+        self.pickerController.sourceType = .camera
+        self.presentationController?.present(self.pickerController, animated: true)
+        if self.pickerController.sourceType == .camera {
+            if self.useOverlay {
+                let overlayView = CameraOverlayView()
+                overlayView.configure(imagePickerController: self.pickerController)
+                self.pickerController.showsCameraControls = false
+                overlayView.frame = (self.pickerController.cameraOverlayView?.frame)!
+                self.pickerController.cameraOverlayView = overlayView
+            }
+        }
+    }
+        
     public func present() {
 
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
