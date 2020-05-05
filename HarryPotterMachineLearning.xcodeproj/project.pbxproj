@@ -15,6 +15,8 @@
 		2D407884245B5DC40050676A /* MLClassPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D407883245B5DC40050676A /* MLClassPrediction.swift */; };
 		2D4F8277245B448000FB3960 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F8276245B448000FB3960 /* ImageController.swift */; };
 		2D4F8279245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F8278245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel */; };
+		802CB27C2461D88E00B5E648 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CB27B2461D88E00B5E648 /* HomeScreen.swift */; };
+		802CB27E2461D8AE00B5E648 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802CB27D2461D8AE00B5E648 /* HomeStoryboard.storyboard */; };
 		809B422624609A0E00591479 /* PersonDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 809B422524609A0E00591479 /* PersonDetector.mlmodel */; };
 		80BB979B2459EE83003F4C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB979A2459EE83003F4C17 /* AppDelegate.swift */; };
 		80BB979D2459EE83003F4C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB979C2459EE83003F4C17 /* SceneDelegate.swift */; };
@@ -34,6 +36,8 @@
 		2D407883245B5DC40050676A /* MLClassPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLClassPrediction.swift; sourceTree = "<group>"; };
 		2D4F8276245B448000FB3960 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		2D4F8278245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HarryPotterCharacterDetector.mlmodel; sourceTree = "<group>"; };
+		802CB27B2461D88E00B5E648 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		802CB27D2461D8AE00B5E648 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		809B422524609A0E00591479 /* PersonDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PersonDetector.mlmodel; sourceTree = "<group>"; };
 		80BB97972459EE83003F4C17 /* HarryPotterMachineLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotterMachineLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BB979A2459EE83003F4C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 			path = MLController;
 			sourceTree = "<group>";
 		};
+		802CB27A2461D86A00B5E648 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				802CB27B2461D88E00B5E648 /* HomeScreen.swift */,
+				802CB27D2461D8AE00B5E648 /* HomeStoryboard.storyboard */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
 		80BB978E2459EE83003F4C17 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +119,7 @@
 		80BB97992459EE83003F4C17 /* HarryPotterMachineLearning */ = {
 			isa = PBXGroup;
 			children = (
+				802CB27A2461D86A00B5E648 /* HomeScreen */,
 				2D03C1CF2460A57B005EC881 /* Extension */,
 				80E8B4FE245B49EA00556C50 /* ShareWithFriends */,
 				2D407885245B5E240050676A /* ImageController */,
@@ -191,6 +205,7 @@
 				80BB97A72459EE87003F4C17 /* LaunchScreen.storyboard in Resources */,
 				80BB97A42459EE87003F4C17 /* Assets.xcassets in Resources */,
 				80BB97A22459EE83003F4C17 /* Main.storyboard in Resources */,
+				802CB27E2461D8AE00B5E648 /* HomeStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +222,7 @@
 				80BB979B2459EE83003F4C17 /* AppDelegate.swift in Sources */,
 				2D407880245B54A20050676A /* CameraOverlayView.swift in Sources */,
 				2D03C1D12460A58D005EC881 /* Extension_UIImageView.swift in Sources */,
+				802CB27C2461D88E00B5E648 /* HomeScreen.swift in Sources */,
 				80BB979D2459EE83003F4C17 /* SceneDelegate.swift in Sources */,
 				80E8B502245B4ADC00556C50 /* ShareWithFriends.swift in Sources */,
 				809B422624609A0E00591479 /* PersonDetector.mlmodel in Sources */,
@@ -357,7 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 784JV863X8;
+				DEVELOPMENT_TEAM = 4NP5AK64M5;
 				INFOPLIST_FILE = HarryPotterMachineLearning/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -376,7 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 784JV863X8;
+				DEVELOPMENT_TEAM = 4NP5AK64M5;
 				INFOPLIST_FILE = HarryPotterMachineLearning/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
