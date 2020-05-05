@@ -10,16 +10,39 @@ import Foundation
 import UIKit
 
 class MLController {
-    let model = HarryPotterCharacterDetector()
+    let harryPotterModel = HarryPotterCharacterDetector()
+    let personModel = PersonDetector()
     
-    func predict(image: UIImage?) -> [MLClassPrediction] {
+    func predictHPCharacter(image: UIImage?) -> [MLClassPrediction] {
         guard let image = image else {
             return []
         }
         guard let buffer = convertImageToBuffer(image: image) else {
             return []
         }
-        guard let prediction = try? model.prediction(image: buffer) else {
+        
+        guard let prediction = try? harryPotterModel.prediction(image: buffer) else {
+            return []
+        }
+        
+        let classes = prediction.classLabelProbs.map {
+            MLClassPrediction(name: $0.key, valuePredict: $0.value)
+        }
+        
+        return classes.sorted{
+            $0.valuePredict > $1.valuePredict
+        }
+    }
+    
+    func predictPerson(image: UIImage?) -> [MLClassPrediction] {
+        guard let image = image else {
+            return []
+        }
+        guard let buffer = convertImageToBuffer(image: image) else {
+            return []
+        }
+        
+        guard let prediction = try? personModel.prediction(image: buffer) else {
             return []
         }
         
