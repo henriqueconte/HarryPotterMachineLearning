@@ -27,11 +27,6 @@ class ImageController: NSObject {
         self.useOverlay = useFaceOverlay
     }
    
-    public func showGalery(){
-        self.pickerController.sourceType = .savedPhotosAlbum
-        self.presentationController?.present(self.pickerController, animated: true)
-    }
-    
     public func showCamera(){
         self.pickerController.sourceType = .camera
         self.presentationController?.present(self.pickerController, animated: true)

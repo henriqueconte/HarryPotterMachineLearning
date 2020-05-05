@@ -43,8 +43,9 @@ class CameraOverlayView: UIView {
     @IBAction func getImage(_ sender: Any) {
         guard let controller = imageController else { return }
         controller.pickerController.sourceType = .savedPhotosAlbum
-        controller.presentationController?.show(controller.pickerController, sender:nil)    
+        controller.presentationController?.show(controller.pickerController, sender:nil)
     }
+    
     @IBAction func changeFlash(_ sender: UIButton) {
         if imagePickerController.cameraFlashMode == .off {
             flashButton.setBackgroundImage(UIImage(systemName: "bolt.fill"), for: .normal)
