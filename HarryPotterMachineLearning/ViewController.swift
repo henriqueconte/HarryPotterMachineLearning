@@ -143,6 +143,10 @@ extension ViewController: ImageControllerDelegate {
     func didSelect(image: UIImage?) {
         DispatchQueue.main.async {
             //self.imageView.image = image
+            
+            guard let image = image else {
+                return
+            }
             let storyboard = UIStoryboard(name: "ResultScreenStoryboard", bundle: nil)
             guard let vc = storyboard.instantiateInitialViewController() as? ResultViewController else {
                 return
