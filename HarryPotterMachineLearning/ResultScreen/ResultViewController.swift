@@ -87,6 +87,31 @@ class ResultViewController: UIViewController {
         self.characterImage = UIImage(named: character)
     }
     
+    private func setCharDescription(characterName: String) {
+        switch characterName {
+        case "Cho Chang":
+            descriptionLabel.text = "You are polite, sweet and well-mannered! You are also easy to get along and very intelligent, having a certain position on Ravenclaw."
+        case "Dobby":
+            descriptionLabel.text = "You are a free elf! You are brave, loyal and willing to put yourself in danger for your friends! "
+        case "Draco Malfoy":
+            descriptionLabel.text = "You may be a little bit narcissist, but you are very intelligent and quick-witted! Slytherin surely wouldn’t be the same without you!"
+        case "Harry Potter":
+            descriptionLabel.text = "You are extremely brave, loyal and a selfless person! You would go to great lengths in order to help others, always following your sense of rightness."
+        case "Hermione Granger":
+            descriptionLabel.text = "You are extremely intelectual, curious and hard-working! You continuously  stand out in every task you have to do!"
+        case "Minerva McGonagall":
+            descriptionLabel.text = "You are magnanimous and stern, being very respected and admired by the others around you!"
+        case "Ronald Wesley":
+            descriptionLabel.text = "You have a unique and strong sense of humor! You are also very empathic with the others around you, always looking forward to helping!"
+        case "Rubeo Hagrid":
+            descriptionLabel.text = "You are warm, kind-hearted and brave! You always stand up for your friends when needed!"
+        case "Severus Snape":
+            descriptionLabel.text = "You are a reserved, calm and analytical person. You are also sarcastic and very strong, sometimes being seem as arrogant. "
+        default:
+            descriptionLabel.text = "You are extremely brave, loyal and a selfless person! You would go to great lengths in order to help others, always following your sense of rightness."
+        }
+    }
+    
     func displayAlert() {
         let alert = UIAlertController(title: "Are you a real wizard?", message: "It looks like no wizard face was found... Are you an infiltrated muggle?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
@@ -167,7 +192,13 @@ extension ResultViewController {
             return
         }
         setCharImage(character: character.name)
+        setCharDescription(characterName: character.name)
         characterName.text = character.name
+        
+        if character.name == "Ronald Wesley" {
+            characterName.text = "Ronald Weasley"
+        }
+        
         // MARK: Todo character description
 
         // transform user image in char image animation
