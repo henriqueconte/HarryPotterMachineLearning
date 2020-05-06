@@ -15,8 +15,12 @@
 		2D407884245B5DC40050676A /* MLClassPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D407883245B5DC40050676A /* MLClassPrediction.swift */; };
 		2D4F8277245B448000FB3960 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F8276245B448000FB3960 /* ImageController.swift */; };
 		2D4F8279245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F8278245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel */; };
-		802CB27C2461D88E00B5E648 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CB27B2461D88E00B5E648 /* HomeScreen.swift */; };
-		802CB27E2461D8AE00B5E648 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802CB27D2461D8AE00B5E648 /* HomeStoryboard.storyboard */; };
+		2DC09D1F2461E40D004D4F09 /* ResultScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC09D1E2461E40D004D4F09 /* ResultScreenStoryboard.storyboard */; };
+		2DC09D222461E66F004D4F09 /* JollyLodger-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DC09D212461E66F004D4F09 /* JollyLodger-Regular.ttf */; };
+		2DC50E9924631B12003F7C84 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC50E9724631B12003F7C84 /* HomeStoryboard.storyboard */; };
+		2DC50E9A24631B12003F7C84 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC50E9824631B12003F7C84 /* HomeScreen.swift */; };
+		2DE168BC24620F5A0077DED9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE168BB24620F5A0077DED9 /* ResultViewController.swift */; };
+		2DE168BE246210EF0077DED9 /* Extension_UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE168BD246210EF0077DED9 /* Extension_UILabel.swift */; };
 		809B422624609A0E00591479 /* PersonDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 809B422524609A0E00591479 /* PersonDetector.mlmodel */; };
 		80BB979B2459EE83003F4C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB979A2459EE83003F4C17 /* AppDelegate.swift */; };
 		80BB979D2459EE83003F4C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB979C2459EE83003F4C17 /* SceneDelegate.swift */; };
@@ -36,8 +40,12 @@
 		2D407883245B5DC40050676A /* MLClassPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLClassPrediction.swift; sourceTree = "<group>"; };
 		2D4F8276245B448000FB3960 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		2D4F8278245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HarryPotterCharacterDetector.mlmodel; sourceTree = "<group>"; };
-		802CB27B2461D88E00B5E648 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		802CB27D2461D8AE00B5E648 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
+		2DC09D1E2461E40D004D4F09 /* ResultScreenStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultScreenStoryboard.storyboard; sourceTree = "<group>"; };
+		2DC09D212461E66F004D4F09 /* JollyLodger-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JollyLodger-Regular.ttf"; sourceTree = "<group>"; };
+		2DC50E9724631B12003F7C84 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
+		2DC50E9824631B12003F7C84 /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		2DE168BB24620F5A0077DED9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		2DE168BD246210EF0077DED9 /* Extension_UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UILabel.swift; sourceTree = "<group>"; };
 		809B422524609A0E00591479 /* PersonDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PersonDetector.mlmodel; sourceTree = "<group>"; };
 		80BB97972459EE83003F4C17 /* HarryPotterMachineLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotterMachineLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BB979A2459EE83003F4C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				2D03C1D02460A58D005EC881 /* Extension_UIImageView.swift */,
+				2DE168BD246210EF0077DED9 /* Extension_UILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -91,11 +100,28 @@
 			path = MLController;
 			sourceTree = "<group>";
 		};
-		802CB27A2461D86A00B5E648 /* HomeScreen */ = {
+		2D51D8F92461DA0400AF6869 /* ResultScreen */ = {
 			isa = PBXGroup;
 			children = (
-				802CB27B2461D88E00B5E648 /* HomeScreen.swift */,
-				802CB27D2461D8AE00B5E648 /* HomeStoryboard.storyboard */,
+				2DC09D1E2461E40D004D4F09 /* ResultScreenStoryboard.storyboard */,
+				2DE168BB24620F5A0077DED9 /* ResultViewController.swift */,
+			);
+			path = ResultScreen;
+			sourceTree = "<group>";
+		};
+		2DC09D202461E62A004D4F09 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2DC09D212461E66F004D4F09 /* JollyLodger-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		2DC50E9624631B12003F7C84 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC50E9724631B12003F7C84 /* HomeStoryboard.storyboard */,
+				2DC50E9824631B12003F7C84 /* HomeScreen.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -119,7 +145,9 @@
 		80BB97992459EE83003F4C17 /* HarryPotterMachineLearning */ = {
 			isa = PBXGroup;
 			children = (
-				802CB27A2461D86A00B5E648 /* HomeScreen */,
+				2DC50E9624631B12003F7C84 /* HomeScreen */,
+				2DC09D202461E62A004D4F09 /* Font */,
+				2D51D8F92461DA0400AF6869 /* ResultScreen */,
 				2D03C1CF2460A57B005EC881 /* Extension */,
 				80E8B4FE245B49EA00556C50 /* ShareWithFriends */,
 				2D407885245B5E240050676A /* ImageController */,
@@ -202,10 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D40787E245B4D9D0050676A /* CameraOverlayView.xib in Resources */,
+				2DC09D222461E66F004D4F09 /* JollyLodger-Regular.ttf in Resources */,
 				80BB97A72459EE87003F4C17 /* LaunchScreen.storyboard in Resources */,
 				80BB97A42459EE87003F4C17 /* Assets.xcassets in Resources */,
+				2DC50E9924631B12003F7C84 /* HomeStoryboard.storyboard in Resources */,
+				2DC09D1F2461E40D004D4F09 /* ResultScreenStoryboard.storyboard in Resources */,
 				80BB97A22459EE83003F4C17 /* Main.storyboard in Resources */,
-				802CB27E2461D8AE00B5E648 /* HomeStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,16 +246,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE168BC24620F5A0077DED9 /* ResultViewController.swift in Sources */,
 				2D4F8279245B452A00FB3960 /* HarryPotterCharacterDetector.mlmodel in Sources */,
 				80BB979F2459EE83003F4C17 /* ViewController.swift in Sources */,
 				2D407882245B5BA00050676A /* MLController.swift in Sources */,
+				2DE168BE246210EF0077DED9 /* Extension_UILabel.swift in Sources */,
 				80BB979B2459EE83003F4C17 /* AppDelegate.swift in Sources */,
 				2D407880245B54A20050676A /* CameraOverlayView.swift in Sources */,
 				2D03C1D12460A58D005EC881 /* Extension_UIImageView.swift in Sources */,
-				802CB27C2461D88E00B5E648 /* HomeScreen.swift in Sources */,
 				80BB979D2459EE83003F4C17 /* SceneDelegate.swift in Sources */,
 				80E8B502245B4ADC00556C50 /* ShareWithFriends.swift in Sources */,
 				809B422624609A0E00591479 /* PersonDetector.mlmodel in Sources */,
+				2DC50E9A24631B12003F7C84 /* HomeScreen.swift in Sources */,
 				2D40787C245B464F0050676A /* ImageControllerDelegate.swift in Sources */,
 				2D4F8277245B448000FB3960 /* ImageController.swift in Sources */,
 				2D407884245B5DC40050676A /* MLClassPrediction.swift in Sources */,
@@ -373,14 +405,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4NP5AK64M5;
+				DEVELOPMENT_TEAM = DZPZD745C7;
 				INFOPLIST_FILE = HarryPotterMachineLearning/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = henriqueConte.HarryPotterMachineLearningh;
+				PRODUCT_BUNDLE_IDENTIFIER = henriqueConte.HarryPotterMachineLearningha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -392,9 +424,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4NP5AK64M5;
+				DEVELOPMENT_TEAM = 784JV863X8;
 				INFOPLIST_FILE = HarryPotterMachineLearning/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

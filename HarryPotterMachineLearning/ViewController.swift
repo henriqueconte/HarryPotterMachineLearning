@@ -143,14 +143,25 @@ extension ViewController: ImageControllerDelegate {
     func didSelect(image: UIImage?) {
         DispatchQueue.main.async {
             //self.imageView.image = image
-            self.userImage = image
             
-            if self.personFound(image: image ?? UIImage()) {
-                self.detectHPCharacter(image: image ?? UIImage())
+            guard let image = image else {
+                return
             }
-            else {
-                self.displayAlert()
+            let storyboard = UIStoryboard(name: "ResultScreenStoryboard", bundle: nil)
+            guard let vc = storyboard.instantiateInitialViewController() as? ResultViewController else {
+                return
             }
+            vc.userImage = image
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+//            self.userImage = image
+//
+//            if self.personFound(image: image ?? UIImage()) {
+//                self.detectHPCharacter(image: image ?? UIImage())
+//            }
+//            else {
+//                self.displayAlert()
+//            }
 
         }
     }
