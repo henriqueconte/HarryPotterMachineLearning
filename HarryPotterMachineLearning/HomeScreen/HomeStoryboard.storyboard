@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1VO-He-GxR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="JollyLodger-Regular.ttf">
+            <string>JollyLodger</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home Screen-->
+        <scene sceneID="2R4-Ez-Ef5">
+            <objects>
+                <viewController id="1VO-He-GxR" customClass="HomeScreen" customModule="HarryPotterMachineLearning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tw6-8f-eBn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="DTd-Xs-Uwl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polyjuicer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EQ-uf-paF">
+                                <rect key="frame" x="155" y="84" width="104.5" height="28"/>
+                                <fontDescription key="fontDescription" name="JollyLodger" family="Jolly Lodger" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.84313725490196079" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCircle" translatesAutoresizingMaskIntoConstraints="NO" id="CBd-Ov-637">
+                                <rect key="frame" x="64" y="305" width="286" height="286"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CBd-Ov-637" secondAttribute="height" multiplier="1:1" id="XeY-SL-Bpx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circleDetails" translatesAutoresizingMaskIntoConstraints="NO" id="gHO-nE-wis">
+                                <rect key="frame" x="71.5" y="312.5" width="271" height="271"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gHO-nE-wis" secondAttribute="height" multiplier="1:1" id="uRj-HO-ITK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISCOVER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zt-Ln-NqC">
+                                <rect key="frame" x="100" y="435" width="214" height="26"/>
+                                <fontDescription key="fontDescription" name="JollyLodger" family="Jolly Lodger" pointSize="22"/>
+                                <color key="textColor" red="0.050980392156862744" green="0.24313725490196078" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeGradient" translatesAutoresizingMaskIntoConstraints="NO" id="BR0-sR-7P8">
+                                <rect key="frame" x="59" y="639.5" width="296" height="129.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeDetails" translatesAutoresizingMaskIntoConstraints="NO" id="lGI-6Z-Sjs">
+                                <rect key="frame" x="51.5" y="631" width="311" height="146.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lGI-6Z-Sjs" secondAttribute="height" multiplier="297:140" id="rSj-5Z-DZv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Find out which Harry Potter character you look like!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="y9S-BT-gP2">
+                                <rect key="frame" x="67" y="645.5" width="280" height="117.5"/>
+                                <fontDescription key="fontDescription" name="JollyLodger" family="Jolly Lodger" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.84313725490196079" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BR0-sR-7P8" firstAttribute="height" secondItem="lGI-6Z-Sjs" secondAttribute="height" multiplier="0.88" id="2Pd-Rs-l1r"/>
+                            <constraint firstItem="DTd-Xs-Uwl" firstAttribute="trailing" secondItem="X64-xI-dTX" secondAttribute="trailing" id="3uQ-sJ-Ost"/>
+                            <constraint firstItem="y9S-BT-gP2" firstAttribute="height" secondItem="lGI-6Z-Sjs" secondAttribute="height" multiplier="0.8" id="4kv-hF-16G"/>
+                            <constraint firstItem="lGI-6Z-Sjs" firstAttribute="centerX" secondItem="Tw6-8f-eBn" secondAttribute="centerX" id="9PA-GT-ACY"/>
+                            <constraint firstItem="DTd-Xs-Uwl" firstAttribute="leading" secondItem="X64-xI-dTX" secondAttribute="leading" id="FmM-kn-6en"/>
+                            <constraint firstItem="CBd-Ov-637" firstAttribute="centerY" secondItem="Tw6-8f-eBn" secondAttribute="centerY" id="Ggx-lf-hN9"/>
+                            <constraint firstItem="2EQ-uf-paF" firstAttribute="top" secondItem="X64-xI-dTX" secondAttribute="top" constant="40" id="H5A-Gv-OL9"/>
+                            <constraint firstItem="gHO-nE-wis" firstAttribute="width" secondItem="CBd-Ov-637" secondAttribute="width" multiplier="0.95" id="MDx-4k-9vz"/>
+                            <constraint firstItem="BR0-sR-7P8" firstAttribute="centerY" secondItem="lGI-6Z-Sjs" secondAttribute="centerY" id="T2J-T9-rje"/>
+                            <constraint firstItem="y9S-BT-gP2" firstAttribute="width" secondItem="lGI-6Z-Sjs" secondAttribute="width" multiplier="0.9" id="UQH-Kw-gw8"/>
+                            <constraint firstItem="BR0-sR-7P8" firstAttribute="width" secondItem="lGI-6Z-Sjs" secondAttribute="width" multiplier="0.95" id="Vbo-h7-5mH"/>
+                            <constraint firstItem="gHO-nE-wis" firstAttribute="centerX" secondItem="CBd-Ov-637" secondAttribute="centerX" id="Xr0-VI-rQe"/>
+                            <constraint firstItem="gHO-nE-wis" firstAttribute="centerY" secondItem="CBd-Ov-637" secondAttribute="centerY" priority="750" id="Xth-wn-H4a"/>
+                            <constraint firstItem="y9S-BT-gP2" firstAttribute="centerX" secondItem="lGI-6Z-Sjs" secondAttribute="centerX" id="YWY-sR-WN9"/>
+                            <constraint firstItem="y9S-BT-gP2" firstAttribute="centerY" secondItem="lGI-6Z-Sjs" secondAttribute="centerY" id="bhZ-NX-2pZ"/>
+                            <constraint firstItem="DTd-Xs-Uwl" firstAttribute="top" secondItem="Tw6-8f-eBn" secondAttribute="top" id="ekR-tz-g3I"/>
+                            <constraint firstItem="CBd-Ov-637" firstAttribute="centerX" secondItem="Tw6-8f-eBn" secondAttribute="centerX" id="g1b-A1-xY5"/>
+                            <constraint firstItem="CBd-Ov-637" firstAttribute="width" secondItem="Tw6-8f-eBn" secondAttribute="width" multiplier="0.69" id="hhH-3D-1zS"/>
+                            <constraint firstItem="3zt-Ln-NqC" firstAttribute="width" secondItem="CBd-Ov-637" secondAttribute="width" multiplier="0.75" id="iha-2P-ZcH"/>
+                            <constraint firstItem="2EQ-uf-paF" firstAttribute="centerX" secondItem="Tw6-8f-eBn" secondAttribute="centerX" id="lXQ-E0-hss"/>
+                            <constraint firstItem="BR0-sR-7P8" firstAttribute="centerX" secondItem="lGI-6Z-Sjs" secondAttribute="centerX" id="lkC-4p-gpU"/>
+                            <constraint firstItem="3zt-Ln-NqC" firstAttribute="centerX" secondItem="CBd-Ov-637" secondAttribute="centerX" id="o9k-jw-Ilr"/>
+                            <constraint firstItem="lGI-6Z-Sjs" firstAttribute="top" secondItem="CBd-Ov-637" secondAttribute="bottom" constant="40" id="oz9-nf-bIX"/>
+                            <constraint firstItem="lGI-6Z-Sjs" firstAttribute="width" secondItem="Tw6-8f-eBn" secondAttribute="width" multiplier="0.752" id="qLq-zu-lna"/>
+                            <constraint firstItem="3zt-Ln-NqC" firstAttribute="centerY" secondItem="CBd-Ov-637" secondAttribute="centerY" id="rZ0-Wy-9Ny"/>
+                            <constraint firstAttribute="bottom" secondItem="DTd-Xs-Uwl" secondAttribute="bottom" id="w4v-5p-Ru6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X64-xI-dTX"/>
+                    </view>
+                    <connections>
+                        <outlet property="discoverImage" destination="CBd-Ov-637" id="Vro-zH-zqS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WiW-4w-v5v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10" y="88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circleDetails" width="253" height="253"/>
+        <image name="homeBackground" width="375" height="812"/>
+        <image name="homeDetails" width="297" height="140"/>
+        <image name="homeGradient" width="282" height="126"/>
+        <image name="yellowCircle" width="262" height="262"/>
+    </resources>
+</document>

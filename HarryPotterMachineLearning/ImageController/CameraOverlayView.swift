@@ -42,7 +42,7 @@ class CameraOverlayView: UIView {
     
     @IBAction func getImage(_ sender: Any) {
         guard let controller = imageController else { return }
-        controller.pickerController.sourceType = .savedPhotosAlbum
+        controller.pickerController.sourceType = .photoLibrary
         controller.presentationController?.show(controller.pickerController, sender:nil)
     }
     
